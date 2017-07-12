@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--修改页面后直接刷新页面即可！！ 在app.js中设置了 swig.setDefaults({cache : false})  好用！！ 记住！！！-->
+    <meta charset="UTF-8">
+    <title>首页 test</title>
+    <link rel="stylesheet" href="/public/css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!--根据服务器返回的信息 判断 展示 用户信息 登录 还是 注册 面板-->
+<!--去main.js中设置    即分配模板   -->
+<div class="mainRight">
+
+    <!--使用模板语法解析后端传来的值  swig  -->
+
+    {% if userInfo._id %}
+
+    <div class="userInfo">
+        <div class="title"><span>用户信息</span></div>
+        <p><span class="colDark username">{{userInfo._username}}</span></p>
+        {% if userInfo.isAdmin%}
+        <p><span class="colDanger info">你好，管理员！</span>
+            <a href="/admin">进入管理</a>
+        </p>
+        {% else %}
+        <p><span class="colDanger info">你好，欢迎光临我的博客！</span></p>
+        {% endif %}
+
+        <p><span class="colDark logout"><a href="javascript:void(0)" id="logout">退出</a></span></p>
+    </div>
+
+{% else %}
+    <div class="login">
+        <div><span>登录</span></div>
+        <div><span>用户名</span><input type="text" name="username"></div>
+        <div><span>密码</span><input type="password" name="password"></div>
+        <div>
+            <button class="login-button">登  录</button>
+        </div>
+        <p>还没有注册？<a href="javascript:void(0);" class="colMint">马上注册</a></p>
+        <p class="colWarning textCenter"></p>
+    </div>
+
+    <div class="register" style="display: none">
+        <div><span>注册</span></div>
+        <div><span>用户名</span><input type="text" name="username"></div>
+        <div><span>密码</span><input type="password" name="password"></div>
+        <div><span>确认</span><input type="password" name="repassword"></div>
+        <div>
+            <button class="register-button">注  册</button>
+        </div>
+        <div>已有账号？<a href="javascript:void(0);" class="colMint">马上登录！！</a></div>
+        <p class="colWarning textCenter"></p>
+    </div>
+    {% endif %}
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="/public/js/index.js"></script>
+</html>
