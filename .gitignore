@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.mongodbStart.bat.swp
+package-lock.json
+package.json
+node_modules
+db/diagnostic.data/
+db/journal/
+db/storage.bson
+node_modules/.bin/md2html.cmd
+node_modules/.bin/swig.cmd
+node_modules/mquery/node_modules/bluebird/

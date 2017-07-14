@@ -123,7 +123,7 @@ app.use('/', require('./router/main'));
 
 
 //连接数据库
-mongoose.connect('mongodb://localhost:27018/blog', (err) => { //blog就是指定的数据库
+mongoose.connect('mongodb://localhost:27017/blog', (err) => { //blog就是指定的数据库
     if(err) {
         console.log(err);
         console.log('数据库连接失败');
