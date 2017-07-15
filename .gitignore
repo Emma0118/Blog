@@ -1,4 +1,14 @@
 
-将删除 .idea/inspectionProfiles/
-将删除 db/journal/
-将删除 public/images/
+.idea/inspectionProfiles/
+ db/journal/
+public/images/
+.gitignore
+.mongodbStart.bat.swp
+package-lock.json
+package.json
+node_modules
+db/diagnostic.data/
+db/storage.bson
+node_modules/.bin/md2html.cmd
+node_modules/.bin/swig.cmd
+node_modules/mquery/node_modules/bluebird/
